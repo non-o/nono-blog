@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "test": "karma start",
-    "start": "webpack-dev-server --content-base public/"
+    "start": "webpack-dev-server --content-base public/ --history-api-fallback"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,8 @@
   "homepage": "https://github.com/non-o/nono-blog#readme",
   "dependencies": {
     "react": "^0.14.7",
-    "react-dom": "^0.14.7"
+    "react-dom": "^0.14.7",
+    "react-router": "^2.0.1"
   },
   "devDependencies": {
     "babel": "^6.5.2",
