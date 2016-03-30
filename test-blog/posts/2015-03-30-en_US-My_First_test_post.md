@@ -1,8 +1,7 @@
 "author":"Cedric Dumont",
 "date":"30/03/2015"
+"title":"This is my First Test Post"
 ;;;
-
-# This is my First Test Post
 
 some regular text
 
