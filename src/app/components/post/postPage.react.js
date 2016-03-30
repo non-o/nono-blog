@@ -1,6 +1,6 @@
 import React from 'react';
-import PostApi from '../../api/postApi';
 import PostList from './postList.react';
+import BlogApi from '../../api/blogApi';
 
 class PostPage extends React.Component {
 
@@ -12,7 +12,9 @@ class PostPage extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({ posts: PostApi.getAllPosts() });
+        BlogApi.getAllPosts( function(data) {
+            this.setState({ posts: data });
+        }.bind(this));
     }
 
     render() {

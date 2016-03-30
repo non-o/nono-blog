@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown  from 'react-markdown';
 
 class Post extends React.Component {
 
@@ -9,13 +10,11 @@ class Post extends React.Component {
     render() {
         let currentPost = this.props.post;
         return (
-            <div className="row">
+            <div key={currentPost.url} className="row">
                 <h2><a href={currentPost.url}>{currentPost.title}</a></h2>
                 <h4>Author: {currentPost.author}</h4>
                 <span className="glyphicon glyphicon-time"> </span> {currentPost.date}
-                <p>
-                    {currentPost.body}
-                </p>
+                <ReactMarkdown source={currentPost.body}/>
                 <hr/>
             </div>
         );

@@ -9,14 +9,14 @@ const PATHS = {
 };
 
 module.exports = {
-    devtool: 'eval-source-map',    
+    devtool: 'eval-source-map',
     entry: {
-		main: [
-			'webpack-dev-server/client?http://localhost:8080', // WebpackDevServer host and port
-			'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
-			path.resolve(__dirname, 'app/main.js') // Your appʼs entry point
-		]
-	},
+        main: [
+            'webpack-dev-server/client?http://localhost:8080', // WebpackDevServer host and port
+            'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
+            path.resolve(__dirname, 'app/main.js') // Your appʼs entry point
+        ]
+    },
     output: {
         path: PATHS.build,
         filename: 'bundle.js'
@@ -40,6 +40,10 @@ module.exports = {
                 test: /\.js?$/,
                 include: PATHS.app,
                 loader: 'react-hot!babel'
+            },
+            {
+                test: /\.json$/,
+                loader: 'json'
             }
         ]
     }
