@@ -1,5 +1,5 @@
 "author":"Cedric Dumont",
-"date":"31/03/2016"
+"date":"31/03/2016",
 "title":"This is Second Post"
 ;;;
 
