@@ -1,7 +1,6 @@
-{
-    "menu":"Home",
-    "author":"Cedric Dumont"
-}
+"menu":"Home",
+"author":"Cedric Dumont"
+;;;
 
 # My Home page
 
@@ -17,3 +16,8 @@ without !
 with http befor
 
 ![insert images too](http://somserver.com/images/nono-icon-black-500.png)
+
+
+with http before but without !
+
+[insert images too](http://othersomserver.com/images/nono-icon-black-500.png)

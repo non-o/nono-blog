@@ -1,9 +1,8 @@
-{
-    "author":"Cedric Dumont",
-    "date":"30/03/2015",
-}
+"author":"Cedric Dumont",
+"date":"30/03/2015"
+;;;
 
-#This is my First Test Post
+# This is my First Test Post
 
 some regular text
 

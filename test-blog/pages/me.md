@@ -1,7 +1,6 @@
-{
-    "menu":"Personal",
-    "author":"Cedric Dumont"
-}
+"menu":"Personal",
+"author":"Cedric Dumont"
+;;;
 
 # My Person page
 
