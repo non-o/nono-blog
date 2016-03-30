@@ -12,7 +12,7 @@ I can include some images
 ![insert images too](../images/nono-icon-black-500.png)
 
 without !
-[insert images too](../images/nono-icon-black-500.png)
+[insert images too](../images/nono-icon-white-500.png)
 
 with http befor
 
