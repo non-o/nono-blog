@@ -14,7 +14,7 @@ class MyRouter extends React.Component {
         return (
             <Router history={browserHistory}>
                 <Route path="/" component={App}>
-                    <IndexRoute component={Page}/>
+                    <IndexRoute component={PostPage}/>
                     <Route path="test-blog/pages/:pageName" component={Page}/>
                     <Route path="posts" component={PostPage}/>
                 </Route>

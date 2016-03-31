@@ -9,9 +9,10 @@ class PostPage extends React.Component {
         this.state = {
             posts: []
         };
+        
     }
-
-    componentDidMount() {
+    
+    componentWillMount() {
         BlogApi.getAllPosts( function(data) {
             this.setState({ posts: data });
         }.bind(this));
