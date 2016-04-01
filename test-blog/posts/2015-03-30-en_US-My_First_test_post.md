@@ -8,11 +8,7 @@ some regular text
 some text with **markdown** goodies *italic* **strong**
 not going at line...
 
-but here yes with a [simple link to google](www.google.com)
-
-some images too
-
-![insert images too](../images/nono-icon-white-500.png)
+but here yes with a [simple link to google](http://www.google.com)
 
 adding some htmpl like <b>bold</b> a <p> paragraph goes down</p>
 
@@ -27,3 +23,5 @@ React.render(
 );
 
 ```
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.

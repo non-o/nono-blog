@@ -96,7 +96,7 @@ export function fetchPageAsync(pageName) {
         dispatch(displayMenuInfo('... Loading Page ...'));
         return BlogApi.getPage(pageName, function(data) {
             dispatch(receivePage(data));
-            dispatch(displayMenuInfo(data.title));
+            dispatch(displayMenuInfo('(' + data.author + ') - ' + data.title));
         });
     };
 }
