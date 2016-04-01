@@ -23,18 +23,34 @@ class BlogApi {
         this.isInitialized = false;
     }
 
-    getPage(pageName, callback) {
-        this.repo.read(this.branch, this.pathToPages + '/' + pageName, function(err, data) {
+    getPage(pagePath, callback) {
+        this.repo.read(this.branch, pagePath, function(err, data) {
             let objasStr =  data.substring(0, data.indexOf(';;;')-1);
             let config = JSON.parse('{'+ objasStr + '}');
             let body = data.substring(data.indexOf(';;;') +3);
-            callback(body);
+            var page = {
+                content : body,
+                title : config.title,
+                author : config.author,
+                url : pagePath
+            }
+            callback(page);
         });
     }
     
     getPost(postFileName, callback) {
-        this.repo.read(this.branch, this.pathToPosts + '/' + postFileName, function(err, data) {
-            callback(data);
+        this.repo.read(this.branch, this.pathToPosts + '/' + postFileName, function(err, post) {
+            let objasStr =  post.substring(0, post.indexOf(';;;')-1);
+                    let config = JSON.parse('{'+ objasStr + '}');
+                    let body = post.substring(post.indexOf(';;;') +3);
+                    var newPost ={
+                        url : postFileName,
+                        author : config.author,
+                        date : config.date,
+                        title : config.title,
+                        body : body
+                    };
+            callback(newPost);
         });
     }
 
@@ -60,25 +76,15 @@ class BlogApi {
         }
     }
     
-    getAllPosts(callback) {
+    getAllPosts(callbackOnNewPost) {
         var posts = [];
         this.repo.contents(this.branch, this.pathToPosts , function(err, contents) {
+            console.log('requesting posts', this.pathToPosts, err, contents);
             _.each(contents, function(value) {
-                this.getPost(value.name, function(post){ 
-                    let objasStr =  post.substring(0, post.indexOf(';;;')-1);
-                    let config = JSON.parse('{'+ objasStr + '}');
-                    let body = post.substring(post.indexOf(';;;') +3);
-                    posts.push({
-                        url : value.name,
-                        author : config.author,
-                        date : config.date,
-                        title : config.title,
-                        body : body
-                    });
+                this.getPost(value.name, function(newPost){ 
+                    callbackOnNewPost(newPost);
                 });
             }.bind(this));
-            
-            callback(posts);
             
         }.bind(this));
     }

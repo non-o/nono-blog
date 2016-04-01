@@ -2,28 +2,37 @@ import React from 'react';
 import Post from './post.react';
 
 class PostList extends React.Component {
-    
+
     constructor(props) {
         super(props);
     }
-    
+
     render() {
-        var createPostMarkup = function(post){
-            return(
-                <Post key={post.url} post={post}/>
+        var createPostMarkup = function(post) {
+            return (
+                <div key={post.url}>
+                    <Post className='postItem' post={post} onPostClicked={() => this.props.onPostClicked(post.url)}/>
+                    <div className='hr'/>
+                </div>
             );
         };
-        
-        return (
-            <div className="container-fluid">
-                {this.props.posts.map(createPostMarkup, this)}
-            </div>
-        );
+
+        if (this.props.posts.length === 0) {
+            return (<div>loading posts</div>);
+        }
+        else {
+            return (
+                <div className='postList'>
+                    {this.props.posts.map(createPostMarkup, this) }
+                </div>
+            );
+        }
     }
 }
 
-PostList.propTypes={
-    posts : React.PropTypes.array.isRequired
+PostList.propTypes = {
+    posts: React.PropTypes.array.isRequired,
+    onPostClicked: React.PropTypes.func.isRequired
 }
 
 export default PostList;

@@ -10,19 +10,20 @@ class Post extends React.Component {
     render() {
         let currentPost = this.props.post;
         return (
-            <div key={currentPost.url} className="row">
-                <h2><a href={currentPost.url}>{currentPost.title}</a></h2>
-                <h4>Author: {currentPost.author}</h4>
-                <span className="glyphicon glyphicon-time"> </span> {currentPost.date}
-                <ReactMarkdown source={currentPost.body}/>
-                <hr/>
+            <div className='post' key={currentPost.url}>
+                <div className='title' onClick={this.props.onPostClicked}>{currentPost.title}</div>
+                <div className='author'>Author: {currentPost.author}</div>
+                <div className='date'> {currentPost.date}</div>
+                <div className='contentSeparator'> </div>
+                <ReactMarkdown className='content' source={currentPost.body}/>
             </div>
         );
     }
 }
 
 Post.propTypes = {
-    post : React.PropTypes.object.isRequired
+    post : React.PropTypes.object.isRequired,
+    onPostClicked: React.PropTypes.func.isRequired
 }
 
 export default Post;

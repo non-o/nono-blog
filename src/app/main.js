@@ -1,24 +1,25 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Router, Route, IndexRoute, browserHistory } from 'react-router'
-import Page from './components/pages/page.react';
-import PostPage from './components/post/postPage.react';
 import App from './components/app.react';
+import Store from './state/blogStore';
+import { Provider } from 'react-redux';
+import {fetchMenusAsync, fetchLatestPostAsync} from './state/actions';
 
 class MyRouter extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
     }
     
+    componentWillMount() {
+        Store.dispatch(fetchMenusAsync());
+        Store.dispatch(fetchLatestPostAsync());
+    }
+
     render() {
         return (
-            <Router history={browserHistory}>
-                <Route path="/" component={App}>
-                    <IndexRoute component={PostPage}/>
-                    <Route path="test-blog/pages/:pageName" component={Page}/>
-                    <Route path="posts" component={PostPage}/>
-                </Route>
-            </Router>
+            <Provider store={Store}>
+                <App/>
+            </Provider>
         );
     }
 }
