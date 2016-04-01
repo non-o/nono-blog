@@ -1,4 +1,4 @@
-"author":"Cedric Dumont"
+"author":"Cedric Dumont",
 "title":"My personal Page"
 ;;;
 ## Here some information about me :

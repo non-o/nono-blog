@@ -1,4 +1,4 @@
-"author":"Cedric Dumont"
+"author":"Cedric Dumont",
 "title":"My Home Page Title"
 ;;;
 This is the home page that is displayed when click on the home menu
